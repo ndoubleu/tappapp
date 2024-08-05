@@ -8,11 +8,27 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontFamily: {
+        futura: ['Futura Md BT', 'sans-serif'],
       },
+      fontSize: {
+        '4xl': '40px',
+        '3xl': '32px',
+      },
+      fontWeight: {
+
+      },
+      lineHeight: {
+        '4xl': '44px',
+        '3xl': '36px',
+      },
+      colors: {
+        background: '#111111',
+        block: '#1B1B1B',
+        blockActive: '#323232',
+        primary: '#2FEAB2',
+        secondary: '#1E3C3A'
+      }
     },
   },
   plugins: [],
