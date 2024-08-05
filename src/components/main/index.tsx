@@ -7,20 +7,22 @@ import { IoIosArrowForward } from "react-icons/io";
 export default function Main() {
   return (
     <main
-      className='w-screen min-h-screen flex flex-col items-center justify-center select-none'
+      className='h-[calc(100vh-80px)] flex flex-col items-center justify-center select-none overflow-y-scroll'
     >
      <div className="flex flex-col items-center gap-4">
-        <Image src={GPU} alt="GPU" draggable={false}/>
-        <span className="opacity-70 font-regular">Your balance</span>
-        <span className="font-bold text-4xl">3.14 GPU</span>
-        <div className="flex flex-nowrap gap-4">
-            <div className="bg-block p-4 border border-blockActive rounded w-[120px] h-[43px] rounded-[21.5px] flex flex-nowrap justify-center items-center cursor-pointer gap-2">
-                <span className="font-bold text-primary">&darr;</span>
-                <span>Deposit</span>
-            </div>
-            <div className="bg-block p-4 border border-blockActive rounded w-[120px] h-[43px] rounded-[21.5px] flex flex-nowrap justify-center items-center cursor-pointer gap-2">
-                <span className="font-bold text-primary">&uarr;</span>
-                <span>Withdraw</span>
+        <div className="flex flex-col items-center gap-4">
+            <Image src={GPU} alt="GPU" draggable={false}/>
+            <span className="opacity-70 font-regular">Your balance</span>
+            <span className="font-bold text-4xl">3.14 GPU</span>
+            <div className="flex flex-nowrap gap-4">
+                <div className="bg-block p-4 border border-blockActive rounded w-[120px] h-[43px] rounded-[21.5px] flex flex-nowrap justify-center items-center cursor-pointer gap-2">
+                    <span className="font-bold text-primary">&darr;</span>
+                    <span>Deposit</span>
+                </div>
+                <div className="bg-block p-4 border border-blockActive rounded w-[120px] h-[43px] rounded-[21.5px] flex flex-nowrap justify-center items-center cursor-pointer gap-2">
+                    <span className="font-bold text-primary">&uarr;</span>
+                    <span>Withdraw</span>
+                </div>
             </div>
         </div>
         <div className="bg-block border border-blockActive rounded flex flex-col w-full rounded-[24px]">
