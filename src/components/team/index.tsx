@@ -30,7 +30,7 @@ const Teams: React.FC<TeamsProps> = ({ users }) => {
                 <div className="col-start-3 bg-blockLighter rounded-[4px] flex flex-col justify-center items-center">
                   <span className='text-sm font-bold'>{user.level || 0} lvl</span>
                 </div>
-                <div className="col-start-4">3</div>
+                <div className="col-start-4"></div>
                 <span className="col-span-2 row-start-2">📈 {`+${user.chart}% GPU`}</span>
                 <div className="col-start-3 row-start-2">{`Fee: ${user.fee}%`}</div>
                 <div className="col-start-4 row-start-2">{user.friends} 👥</div>

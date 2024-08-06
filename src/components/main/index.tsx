@@ -41,7 +41,7 @@ export default function Main() {
             </div>
             <div className="p-4">
                 <div className="h-[8px] w-full bg-blockActive rounded-[13px]">
-                    <div className="h-full w-3/5 bg-primary rounded-[13px]"></div>
+                    <div className="h-full animate-expand bg-primary rounded-[13px]"></div>
                 </div>
             </div>
             <div className="flex flex-col gap-2">
