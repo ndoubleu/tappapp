@@ -4,9 +4,12 @@ import Image from 'next/image';
 import Plus from '@/assets/icons/plus';
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { useState } from 'react';
+import DrawerComponent from './drawer';
 export default function Taps() {
   const [count, setCount] = useState(0);
   const [open, setOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  
   return (
     <div className="relative w-full h-full flex flex-col gap-4 items-center">
       <div className="flex flex-nowrap justify-between rounded-[12px] bg-block border border-blockActive p-4 text-sm w-full relative z-10">
@@ -96,12 +99,13 @@ export default function Taps() {
               <span className='text-sm opacity-60 font-normal'>/100</span>
             </div>
           </div>
-          <div className='flex flex-nowrap gap-2 justify-between items-center text-xl bg-black p-2 bg-opacity-25 rounded-[10px] cursor-pointer z-2 relative'>
+          <div className='flex flex-nowrap gap-2 justify-between items-center text-xl bg-black p-2 bg-opacity-25 rounded-[10px] cursor-pointer z-2 relative' onClick={()=>{setDrawerOpen(true)}}>
             <span>🚀</span>
             <span>Boost</span>
           </div>      
         </div>
       </div>
+      <DrawerComponent setOpen={setDrawerOpen} open={drawerOpen}/>
   </div>
   );
 }
