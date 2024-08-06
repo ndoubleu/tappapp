@@ -7,7 +7,7 @@ import { IoIosArrowForward } from "react-icons/io";
 export default function Main() {
   return (
     <main
-      className='h-[calc(100vh-80px)] flex flex-col items-center justify-center select-none overflow-y-scroll'
+      className='flex flex-col items-center justify-center select-none overflow-y-scroll'
     >
      <div className="flex flex-col items-center gap-4">
         <div className="flex flex-col items-center gap-4">
