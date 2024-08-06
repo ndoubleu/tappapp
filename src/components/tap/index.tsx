@@ -2,15 +2,16 @@ import tCurrency from '@images/tCurrency.png';
 import Tap from '@images/tap.png'
 import Image from 'next/image';
 import Plus from '@/assets/icons/plus';
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { useState } from 'react';
 export default function Taps() {
   const [count, setCount] = useState(0);
+  const [open, setOpen] = useState(false);
   return (
     <div className="relative w-full h-full flex flex-col gap-4 items-center">
-      <div className="flex flex-nowrap justify-between rounded-[12px] bg-block border border-blockActive p-4 text-sm w-full">
+      <div className="flex flex-nowrap justify-between rounded-[12px] bg-block border border-blockActive p-4 text-sm w-full relative z-10">
         <div className='flex flex-nowrap gap-2 items-center'>
-          <Image src={tCurrency} alt="Currency" className='my-auto'/>
+          <Image src={tCurrency} alt="Currency" className='my-auto' draggable={false}/>
           <span>15.72 GPU</span>
         </div>
         <div className='flex flex-nowrap justify-center bg-primary text-secondary items-center p-2 rounded-[21.5px] cursor-pointer w-[118px] h-[40px] gap-2'>
@@ -20,19 +21,54 @@ export default function Taps() {
           </span>
         </div>
       </div>
-      <div className="flex flex-col justify-between rounded-[12px] bg-block border border-blockActive p-4 text-sm gap-4 cursor-pointer w-full">
+      <div className="flex flex-col justify-between rounded-[12px] bg-block border border-blockActive p-4 text-sm gap-4 cursor-pointer w-full relative z-10" onClick={()=>{console.log('clicked');setOpen(!open)}}>
         <div className='flex flex-nowrap justify-between font-bold text-base'>
           <span className=''>Finger Minig Round</span>
           <div className='flex flex-nowrap item-center gap-2'>
             <span>
               56s
             </span>
-            <IoIosArrowDown className="my-auto text-bold"/>
+            {
+              open ? <IoIosArrowUp className="my-auto text-bold"/> : <IoIosArrowDown className="my-auto text-bold"/>
+            }
           </div>
         </div>
         <div className="h-[8px] w-full bg-blockActive rounded-[13px]">
           <div className="h-full animate-expand bg-primary rounded-[13px]"></div>
         </div>
+        {
+          open &&
+          <div className='flex flex-col gap-2'>
+            <div className='flex flex-nowrap gap-2 items-center'>
+              <Image src={tCurrency} alt="Currency" className='my-auto' draggable={false}/>
+              <span className='font-bold text-sm'>+0 GPU</span>
+              <span className='text-sm'>Lost round earnings</span>
+            </div>
+            <div className="grid grid-cols-3 grid-rows-2 gap-2">
+                <span className='text-sm'>
+                  Clicks total
+                </span>
+                <span className='text-sm'>
+                  Your clicks
+                </span>
+                <span className='text-sm'>
+                  Bank of the round
+                </span>
+                <span className='text-sm'>
+                 👆 {count}
+                </span>
+                <span className='text-sm'>
+                👇 {count}
+                </span>
+                <div className='flex flex-nowrap items-center gap-2'>
+                  <Image src={tCurrency} alt='Currency'/>
+                  <span className='text-sm font-medium'>
+                  200 GPU
+                  </span>
+                </div>
+          </div>
+        </div>
+        }
       </div>
       <div
         className="absolute"
