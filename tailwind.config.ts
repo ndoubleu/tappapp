@@ -24,6 +24,7 @@ const config: Config = {
         background: '#111111',
         block: '#1B1B1B',
         blockActive: '#323232',
+        blockLighter: '#3D3D3D',
         primary: '#2FEAB2',
         secondary: '#1E3C3A'
       }

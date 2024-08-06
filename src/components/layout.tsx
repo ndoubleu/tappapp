@@ -7,8 +7,10 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="flex flex-col h-[calc(100vh-100px)] overflow-y-scroll p-4 items-center">
-      <main className="flex-grow">{children}</main>
+    <div className="relative flex flex-col h-[calc(100vh-50px)] overflow-y-scroll p-4 items-center">
+      <main className="flex-grow max-w-[400px] pb-[50px]">
+        {children}
+      </main>
       <Footer />
     </div>
   );

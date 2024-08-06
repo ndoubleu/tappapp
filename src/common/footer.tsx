@@ -38,7 +38,7 @@ export default function Footer() {
 
   return (
     <div className="fixed bottom-2 flex flex-col items-center w-full px-2">
-      <div className="grid grid-cols-5 grid-rows-[1fr] bg-block rounded-[24px] border border-blockActive p-[4px] gap-[4px]">
+      <div className="grid grid-cols-5 grid-rows-[1fr] bg-block rounded-[24px] border border-blockActive p-[4px] gap-[4px] max-w-[400px] w-full">
         {nav.map((item) => (
           <Link key={item.title} href={item.url}>
             <div
