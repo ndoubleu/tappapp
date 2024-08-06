@@ -5,17 +5,19 @@ import Link from 'next/link';
 import Squads from '@images/squads.png';
 import { fetchUsers } from '@/services/users.services';
 import Avatar from '../avatar';
+import { useRouter } from 'next/router';
 interface TeamsProps {
   users: any[];
 }
 
 const Teams: React.FC<TeamsProps> = ({ users }) => {
+  const router = useRouter();
   return (
     <div className="flex flex-col gap-2 items-center">
       <Image src={Squads} alt="Squads" />
       <span className='text-3xl text-center font-bold'>Join the squad</span>
       <span className='text-m text-center font-bold opacity-60'>These squads are waiting for you. Would you like to join one of them?</span>
-      <a href="/team" className='text-m text-primary font-bold'>Refresh</a>
+      <span className='text-m text-primary font-bold cursor-pointer' onClick={()=>{router.reload()}}>Refresh</span>
       <div className='flex flex-col rounded-[24px] bg-block w-full'>
         {
         users &&
