@@ -6,11 +6,11 @@ import avatar2 from '@images/avatar2.png'
 import { IoIosArrowForward } from "react-icons/io";
 export default function Main() {
   return (
-    <main
-      className='flex flex-col items-center justify-center select-none overflow-y-scroll'
+    <div
+      className='flex flex-col items-center justify-center overflow-y-scroll w-full'
     >
-     <div className="flex flex-col items-center gap-4">
-        <div className="flex flex-col items-center gap-4">
+     <div className="flex flex-col items-center gap-4 w-full">
+        <div className="flex flex-col items-center gap-4 w-full">
             <Image src={GPU} alt="GPU" draggable={false}/>
             <span className="opacity-70 font-regular">Your balance</span>
             <span className="font-bold text-4xl">3.14 GPU</span>
@@ -71,6 +71,6 @@ export default function Main() {
             </div>
         </div>
      </div>
-    </main>
+    </div>
   );
 }
