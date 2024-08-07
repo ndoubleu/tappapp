@@ -8,6 +8,9 @@ interface AvatarProps {
 }
 
 const Avatar: React.FC<AvatarProps> = ({ imagePath, classNames }) => {
+  if(!imagePath.toString().includes('https')){
+    imagePath = noPhoto;
+  }
   const [src, setSrc] = useState<string | StaticImageData>(imagePath);
 
   const handleError = () => {

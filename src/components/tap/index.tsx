@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { useState } from 'react';
 import DrawerComponent from './drawer';
-import StatusComponent from '../status';
+import StatusComponent from './status';
 export default function Taps() {
   const [count, setCount] = useState(0);
   const [open, setOpen] = useState(false);
