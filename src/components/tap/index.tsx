@@ -1,10 +1,10 @@
 import tCurrency from '@images/tCurrency.png';
-import Tap from '@images/tap.png'
 import Image from 'next/image';
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { useState } from 'react';
 import DrawerComponent from './drawer';
 import StatusComponent from './status';
+import ClickerComponent from './clicker';
 
 export default function Taps() {
   const [count, setCount] = useState(0);
@@ -75,26 +75,7 @@ export default function Taps() {
         }}
       >
       </div>
-      <div className='relative w-full h-full flex flex-col justify-between'>
-        <Image src={Tap} alt="Tap" className='cursor-pointer absolute inset-0 m-auto z-1' onClick={()=>{setCount(count+1)}}/>
-        <div className='flex flex-nowrap justify-center items-center text-4xl font-bold z-2 relative'>
-          <span className=''>{count}</span>
-          <span>👆</span>
-        </div>
-        <div className='flex flex-nowrap gap-2 justify-between items-center'>
-          <div className='flex flex-nowrap justify-center items-center text-4xl font-bold z-2 relative'>
-            <span>⚡</span>
-            <div className='flex flex-col items-end text-2xl'>
-              <span className=''>100</span>
-              <span className='text-sm opacity-60 font-normal'>/100</span>
-            </div>
-          </div>
-          <div className='flex flex-nowrap gap-2 justify-between items-center text-xl bg-black p-2 bg-opacity-25 rounded-[10px] cursor-pointer z-2 relative' onClick={()=>{setDrawerOpen(true)}}>
-            <span>🚀</span>
-            <span>Boost</span>
-          </div>      
-        </div>
-      </div>
+      <ClickerComponent count={count} setCount={setCount} setDrawerOpen={setDrawerOpen}/>
       <DrawerComponent setOpen={setDrawerOpen} open={drawerOpen}/>
   </div>
   );

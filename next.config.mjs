@@ -45,6 +45,7 @@ const nextConfig = {
     'rc-tree-select',
     'rc-upload',
     'rc-util',
+    'react-tilt'
   ],
 };
 
