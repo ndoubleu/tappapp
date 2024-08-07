@@ -71,7 +71,7 @@ const Tops: React.FC<TopsProps> = ({ users }) => {
                   </div>
                 <div className="col-start-3 row-start-2">{`${user.fee} Gh/s`}</div>
                 <div className="col-start-4 row-start-1 row-end-3 flex flex-col justify-center items-end">
-                  <span>{i+1}</span>
+                  {i === 0 ? <span className="text-xl">🥇</span> : i === 1 ? <span className="text-xl">🥈</span> : i === 2 ? <span className="text-xl">🥉</span> : <span className="text-base font-regular opacity-60">{i+1}</span>}
                   </div>
             </div>
     
