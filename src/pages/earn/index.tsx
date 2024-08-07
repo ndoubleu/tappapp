@@ -1,16 +1,16 @@
 import Earns from '@/components/earn'
 
-export default function Earn(props?: any) {
-  console.log(props);
+export default function Earn({ section }) {
   return (
     <>
-    <Earns/> 
+    <Earns section={section}/> 
     </>
   )
 }
-export async function getServerSideProps(context: any) {
-  const  params = context.params;
-  return{
-    props: {param: 'search'}
-  }
-}
+export const getServerSideProps = async (context: any) => {
+  const { section } = context.query;
+  const safeSection = section || null;
+  return {
+    props: { section: safeSection },
+  };
+};
