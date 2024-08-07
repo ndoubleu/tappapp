@@ -1,10 +1,10 @@
 import tCurrency from '@images/tCurrency.png';
 import Tap from '@images/tap.png'
 import Image from 'next/image';
-import Plus from '@/assets/icons/plus';
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { useState } from 'react';
 import DrawerComponent from './drawer';
+import StatusComponent from '../status';
 export default function Taps() {
   const [count, setCount] = useState(0);
   const [open, setOpen] = useState(false);
@@ -12,18 +12,7 @@ export default function Taps() {
   
   return (
     <div className="relative w-full h-full flex flex-col gap-4 items-center">
-      <div className="flex flex-nowrap justify-between rounded-[12px] bg-block border border-blockActive p-4 text-sm w-full relative z-10">
-        <div className='flex flex-nowrap gap-2 items-center'>
-          <Image src={tCurrency} alt="Currency" className='my-auto' draggable={false}/>
-          <span>15.72 GPU</span>
-        </div>
-        <div className='flex flex-nowrap justify-center bg-primary text-secondary items-center p-2 rounded-[21.5px] cursor-pointer w-[118px] h-[40px] gap-2'>
-          <Plus/>
-          <span>
-            Withdraw
-          </span>
-        </div>
-      </div>
+      <StatusComponent/>
       <div className="flex flex-col justify-between rounded-[12px] bg-block border border-blockActive p-4 text-sm gap-4 cursor-pointer w-full relative z-10" onClick={()=>{console.log('clicked');setOpen(!open)}}>
         <div className='flex flex-nowrap justify-between font-bold text-base'>
           <span className=''>Finger Minig Round</span>
