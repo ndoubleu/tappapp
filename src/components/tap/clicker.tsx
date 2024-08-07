@@ -2,7 +2,7 @@ import Tap from '@images/tap.png';
 import Image from 'next/image';
 import { Tilt } from 'react-tilt';
 export const defaultOptions = {
-  reverse: false,
+  reverse: true,
   max: 35,
   startX: 0,
   startY: 0,
