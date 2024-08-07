@@ -1,9 +1,5 @@
-// pages/teams.tsx
-import { GetServerSideProps } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 import Squads from '@images/squads.png';
-import { fetchUsers } from '@/services/users.services';
 import Avatar from '../avatar';
 import { useRouter } from 'next/router';
 interface TeamsProps {

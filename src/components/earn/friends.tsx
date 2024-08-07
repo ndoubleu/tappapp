@@ -1,7 +1,6 @@
 
 import tCurrency from '@images/tCurrency.png';
 import Image from 'next/image';
-import CustomButton from '../button';
 import Copy from '@/assets/icons/copy';
 export default function Friends () {
   return (
