@@ -1,6 +1,7 @@
 import Tap from '@images/tap.png';
 import Image from 'next/image';
 import { Tilt } from 'react-tilt';
+import ClickEffect from './clickEffect';
 export const defaultOptions = {
   reverse: true,
   max: 35,
@@ -37,7 +38,9 @@ export default function ClickerComponent({count, setCount, setDrawerOpen}: Click
       <div className='absolute inset-0 m-auto flex flex-col justify-center items-center'>
         <div className='relative'>
           <Tilt options={defaultOptions}>
-           <Image src={Tap} alt="Tap" className='cursor-pointer z-1' onClick={()=>{setCount(count+1)}}/>
+            <ClickEffect>
+              <Image src={Tap} alt="Tap" className='cursor-pointer z-1' onClick={()=>{setCount(count+1)}} draggable={false}/>
+           </ClickEffect>
           </Tilt>
         </div>
       </div>

@@ -27,7 +27,16 @@ const config: Config = {
         blockLighter: '#3D3D3D',
         primary: '#2FEAB2',
         secondary: '#1E3C3A'
-      }
+      },
+      keyframes: {
+        flyUp: {
+          '0%': { transform: 'translateY(-10px)', opacity: '1' },
+          '100%': { transform: 'translateY(-70px)', opacity: '0' },
+        },
+      },
+      animation: {
+        flyUp: 'flyUp 1s ease-out forwards',
+      },
     },
   },
   plugins: [],
