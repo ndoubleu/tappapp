@@ -24,7 +24,7 @@ const ClickEffect = ({ children }: ClickEffectProps) => {
       {clicks.map((click) => (
         <span
           key={click.id}
-          className="absolute text-3xl font-bold animate-flyUp pointer-events-none"
+          className="absolute text-4xl font-bold animate-flyUp pointer-events-none"
           style={{ left: click.x, top: click.y }}
         >
           +1
