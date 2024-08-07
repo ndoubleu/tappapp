@@ -1,12 +1,16 @@
 import Earns from '@/components/earn'
 
-export default function Earn({ section }) {
+interface EarnProps {
+  section: string;
+}
+const Earn: React.FC<EarnProps> = ({ section }) => {
   return (
     <>
     <Earns section={section}/> 
     </>
   )
 }
+export default Earn;
 export const getServerSideProps = async (context: any) => {
   const { section } = context.query;
   const safeSection = section || null;
