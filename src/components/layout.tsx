@@ -24,7 +24,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           }
         }}
       >
-    <div className="relative flex flex-col h-[calc(100vh-50px)] overflow-y-scroll p-4 items-center">
+    <div className="relative flex flex-col h-[calc(100vh-50px)] overflow-y-scroll overflow-x-hidden p-4 items-center">
       <main className="flex-grow max-w-[400px] pb-[50px] w-full">
         {children}
       </main>
