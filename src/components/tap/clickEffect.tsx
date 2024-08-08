@@ -7,19 +7,31 @@ interface ClickEffectProps {
 const ClickEffect = ({ children }: ClickEffectProps) => {
   const [clicks, setClicks] = useState<{ x: number, y: number, id: number }[]>([]);
 
-  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    const { clientX, clientY } = e;
+  const handleClick = (e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    const newClick = { x: clientX - rect.left, y: clientY - rect.top, id: Date.now() };
 
-    setClicks((prevClicks) => [...prevClicks, newClick]);
-    setTimeout(() => {
-      setClicks((prevClicks) => prevClicks.filter((click) => click.id !== newClick.id));
-    }, 1000);
+    const touches = ('touches' in e) ? Array.from(e.touches) : [{ clientX: e.clientX, clientY: e.clientY }];
+
+    const newClicks = touches.map((touch) => {
+      const { clientX, clientY } = touch;
+      return { x: clientX - rect.left, y: clientY - rect.top, id: Date.now() + Math.random() };
+    });
+
+    setClicks((prevClicks) => [...prevClicks, ...newClicks]);
+
+    newClicks.forEach((newClick) => {
+      setTimeout(() => {
+        setClicks((prevClicks) => prevClicks.filter((click) => click.id !== newClick.id));
+      }, 1000);
+    });
   };
 
   return (
-    <div className="relative inline-block" onClick={handleClick}>
+    <div
+      className="relative inline-block"
+      onClick={handleClick as any}
+      onTouchStart={handleClick as any}
+    >
       {children}
       {clicks.map((click) => (
         <span
