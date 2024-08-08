@@ -13,7 +13,7 @@ export default function Taps() {
   
   return (
     <div className="relative w-full h-full flex flex-col gap-4 items-center">
-      <StatusComponent/>
+      <StatusComponent withButton={true}/>
       <div className="flex flex-col justify-between rounded-[12px] bg-block border border-blockActive p-4 text-sm gap-4 cursor-pointer w-full relative z-10" onClick={()=>{console.log('clicked');setOpen(!open)}}>
         <div className='flex flex-nowrap justify-between font-bold text-base'>
           <span className=''>Finger Minig Round</span>

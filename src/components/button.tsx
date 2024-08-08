@@ -14,7 +14,7 @@ const CustomButton: React.FC<AvatarProps> = ({ title, classNames, icon, onClick 
   return (
     <div className={` ${classNames}`}>
       <Button type="primary" icon={icon} className='py-[10px] px-[16px] text-secondary font-bold w-full h-full' onClick={onClick}>
-        Search
+        {title}
       </Button>
     </div>
   );
