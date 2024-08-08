@@ -2,6 +2,8 @@ import { useState } from 'react';
 import StatusComponent from '../tap/status';
 import classNames from 'classnames';
 import CustomButton from '../button';
+import Deposit from './deposit';
+import Withdraw from './withdraw';
 
 export default function Taps() {
   const [deposit, setDoposit] = useState(true)
@@ -34,13 +36,9 @@ export default function Taps() {
           Withdraw
         </div>
       </div>
-
-      <span className='text-base opacity-60'>
-        To transfer GPU to the app, you need to connect your TON wallet
-      </span>
-
-      <CustomButton title="Connect Wallet" onClick={()=>{console.log('Clicked')}}/>
-      
+      {
+        deposit ? <Deposit/> : <Withdraw/>
+      }
   </div>
   );
 }

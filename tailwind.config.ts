@@ -37,6 +37,9 @@ const config: Config = {
       animation: {
         flyUp: 'flyUp 1s ease-out forwards',
       },
+      scale: {
+        '98' : '0.98', 
+      },
     },
   },
   plugins: [],

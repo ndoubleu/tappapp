@@ -28,18 +28,20 @@ export const defaultOptions = {
 type ClickerComponentProps = {
   count: number,
   setCount: (count: number)=>void;
+  remain: number,
+  setRemain: (reamin: number)=>void;
   setDrawerOpen: (isOpen: boolean)=>void;
 };
 
-export default function ClickerComponent({count, setCount, setDrawerOpen}: ClickerComponentProps) {
+export default function ClickerComponent({count, setCount, setDrawerOpen, remain, setRemain}: ClickerComponentProps) {
 
   return (
     <div className='relative w-full h-full flex flex-col justify-between'>
       <div className='absolute inset-0 m-auto flex flex-col justify-center items-center'>
         <div className='relative'>
           <Tilt options={defaultOptions}>
-            <ClickEffect count={count} setCount={setCount}>
-              <Image src={Tap} alt="Tap" className='cursor-pointer z-1' onClick={()=>{setCount(count+1)}} draggable={false}/>
+            <ClickEffect remain={remain} setRemain={setRemain} count={count} setCount={setCount}>
+              <Image src={Tap} alt="Tap" className={`cursor-pointer z-1 transform transition-transform duration-150 ease-out scale-100 ${remain > 0 && 'active:scale-98'}`} draggable={false}/>
            </ClickEffect>
           </Tilt>
         </div>
@@ -52,7 +54,7 @@ export default function ClickerComponent({count, setCount, setDrawerOpen}: Click
         <div className='flex flex-nowrap justify-center items-center text-4xl font-bold z-2 relative'>
           <span>⚡</span>
           <div className='flex flex-col items-end text-2xl'>
-            <span className=''>100</span>
+            <span className=''>{remain}</span>
             <span className='text-sm opacity-60 font-normal'>/100</span>
           </div>
         </div>

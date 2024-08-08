@@ -9,6 +9,7 @@ import ClickerComponent from './clicker';
 export default function Taps() {
   const [count, setCount] = useState(0);
   const [open, setOpen] = useState(false);
+  const [remain, setRemain] = useState(100);
   const [drawerOpen, setDrawerOpen] = useState(false);
   
   return (
@@ -75,7 +76,7 @@ export default function Taps() {
         }}
       >
       </div>
-      <ClickerComponent count={count} setCount={setCount} setDrawerOpen={setDrawerOpen}/>
+      <ClickerComponent remain={remain} setRemain={setRemain} count={count} setCount={setCount} setDrawerOpen={setDrawerOpen}/>
       <DrawerComponent setOpen={setDrawerOpen} open={drawerOpen}/>
   </div>
   );
