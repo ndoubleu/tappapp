@@ -27,7 +27,7 @@ export default function Main() {
         </div>
         <div className="bg-block border border-blockActive rounded flex flex-col w-full rounded-[24px]">
             <div className="flex flex-col p-4">
-                <div className="flex flex-nowrap gap-4">
+                <div className="flex flex-nowrap gap-4 w-full justify-between">
                     <div className="flex flex-col gap-2">
                         <span className="text-m mb-2">Profit per 1 min</span>
                         <span className="text-2xl font-bold">0.0000 GPU</span>
