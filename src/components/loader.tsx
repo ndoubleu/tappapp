@@ -2,15 +2,15 @@ import React from 'react';
 
 const Loader = () => {
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-background z-50">
+    <div className="fixed inset-0 flex items-center justify-center bg-background bg-opacity-80 z-50">
       <div className="loader"></div>
       <style jsx>{`
         .loader {
-          border: 8px solid #2FEAB2;
-          border-top: 8px solid #111111;
+          border: 4px solid #2FEAB2;
+          border-top: 8px solid transparent;
           border-radius: 50%;
-          width: 60px;
-          height: 60px;
+          width: 40px;
+          height: 40px;
           animation: spin 2s linear infinite;
         }
 
