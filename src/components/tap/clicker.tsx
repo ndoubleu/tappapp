@@ -38,7 +38,7 @@ export default function ClickerComponent({count, setCount, setDrawerOpen}: Click
       <div className='absolute inset-0 m-auto flex flex-col justify-center items-center'>
         <div className='relative'>
           <Tilt options={defaultOptions}>
-            <ClickEffect>
+            <ClickEffect count={count} setCount={setCount}>
               <Image src={Tap} alt="Tap" className='cursor-pointer z-1' onClick={()=>{setCount(count+1)}} draggable={false}/>
            </ClickEffect>
           </Tilt>

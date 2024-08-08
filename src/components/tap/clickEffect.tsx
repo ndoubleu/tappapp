@@ -2,9 +2,11 @@ import { useState, ReactNode } from 'react';
 
 interface ClickEffectProps {
   children: ReactNode;
+  count: number;
+  setCount: (count: number) => void;
 }
 
-const ClickEffect = ({ children }: ClickEffectProps) => {
+const ClickEffect = ({ children, count, setCount }: ClickEffectProps) => {
   const [clicks, setClicks] = useState<{ x: number, y: number, id: number }[]>([]);
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
@@ -14,6 +16,7 @@ const ClickEffect = ({ children }: ClickEffectProps) => {
 
     const newClicks = touches.map((touch) => {
       const { clientX, clientY } = touch;
+      setCount(count + 1);
       return { x: clientX - rect.left, y: clientY - rect.top, id: Date.now() + Math.random() };
     });
 
