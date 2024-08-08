@@ -55,7 +55,7 @@ const Tops: React.FC<TopsProps> = ({ users }) => {
           Week
         </div>
       </div>
-      <div className="content w-dull bg-block rounded-[24px]">
+      <div className="content w-full bg-block rounded-[24px]">
       {
         users &&
         users.map((user, i) => (
