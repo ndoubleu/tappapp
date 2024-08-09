@@ -5,9 +5,35 @@ import Layout from '@/components/layout';
 import Loader from '@/components/loader';
 import '../styles/globals.css';
 import '../styles/animation.css';
+import tCurrency from '@images/tCurrency.png';
+import Tap from '@images/tap.png';
+import GPU from '@images/gpu.png';
+import Fan from '@images/fan.png';
+import avatar1 from '@images/avatar1.png';
+import avatar2 from '@images/avatar2.png';
+
+const images = [tCurrency.src, Tap.src, GPU.src, Fan.src, avatar1.src, avatar2.src];
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+
+    const loadWorker = async () => {
+      const worker = new Worker('/static-loader-worker.js');
+      const resources = [
+        ...images
+      ];
+
+      worker.postMessage({ resources });
+
+      return () => {
+        worker.terminate();
+      };
+    };
+
+    loadWorker();
+  }, []);
 
   useEffect(() => {
     const handleStart = () => setLoading(true);

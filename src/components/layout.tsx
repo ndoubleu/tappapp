@@ -1,13 +1,13 @@
 import React, { ReactNode } from 'react';
 import Footer from '@/common/footer';
 import { ConfigProvider } from 'antd';
-
 interface LayoutProps {
   children: ReactNode;
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
+    <>
     <ConfigProvider
         theme={{
           token: {
@@ -31,6 +31,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <Footer />
     </div>
     </ConfigProvider>
+    </>
   );
 };
 
