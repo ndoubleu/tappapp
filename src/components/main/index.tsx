@@ -11,7 +11,7 @@ export default function Main() {
     >
      <div className="flex flex-col items-center gap-4 w-full">
         <div className="flex flex-col items-center gap-4 w-full">
-            <Image src={GPU} alt="GPU" draggable={false}/>
+            <Image src={GPU} alt="GPU" draggable={false} priority/>
             <span className="opacity-70 font-regular">Your balance</span>
             <span className="font-bold text-4xl">3.14 GPU</span>
             <div className="flex flex-nowrap gap-4">

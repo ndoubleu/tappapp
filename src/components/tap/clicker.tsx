@@ -41,7 +41,7 @@ export default function ClickerComponent({count, setCount, setDrawerOpen, remain
         <div className='relative'>
           {/* <Tilt options={defaultOptions}> */}
             <ClickEffect remain={remain} setRemain={setRemain} count={count} setCount={setCount}>
-              <Image src={Tap} alt="Tap" className={`cursor-pointer z-1 transform transition-transform duration-150 ease-out scale-100 ${remain > 0 && 'active:scale-98'}`} draggable={false}/>
+              <Image src={Tap} alt="Tap" className={`cursor-pointer z-1 transform transition-transform duration-150 ease-out scale-100 ${remain > 0 && 'active:scale-98'}`} draggable={false} priority/>
            </ClickEffect>
           {/* </Tilt> */}
         </div>

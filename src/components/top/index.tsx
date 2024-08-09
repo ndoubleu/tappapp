@@ -28,7 +28,7 @@ const Tops: React.FC<TopsProps> = ({ users }) => {
         >
 
         </div>
-        <Image src={Cup} alt="Cup" />
+        <Image src={Cup} alt="Cup" draggable={false} priority/>
       </div>
       <span className="font-bold text-3xl relative z-2 tex-center">Top miners</span>
       <div className="rounded-[24px] w-full bg-block min-h-[54px] h-[54px] grid grid-cols-2 grid-rows-1">

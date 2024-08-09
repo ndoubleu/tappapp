@@ -24,7 +24,7 @@ const Teams: React.FC<TeamsProps> = ({ users }) => {
         >
 
         </div>
-        <Image src={Squads} alt="Squads" />
+        <Image src={Squads} alt="Squads" priority draggable={false}/>
       </div>
       <span className='text-3xl text-center font-bold'>Join the squad</span>
       <span className='text-m text-center font-bold opacity-60'>These squads are waiting for you. Would you like to join one of them?</span>
