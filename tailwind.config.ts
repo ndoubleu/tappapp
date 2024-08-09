@@ -43,6 +43,7 @@ const config: Config = {
       backgroundImage: {
         'green-gradient': 'linear-gradient(180deg, #1E3C3A 0%, #1A2824 49.5%, #1E3C3A 79.5%, #21716B 100%)',
         'red-gradient': 'linear-gradient(180deg, #3C1E1E 0%, #281A1A 49.5%, #532626 79.5%, #953333 100%)',
+        'badge-gradient': 'linear-gradient(90deg, #B31590 0%, #520E7C 49.5%, #27094C 85.5%)',
       },
     },
   },

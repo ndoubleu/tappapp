@@ -19,7 +19,7 @@ const mock: CardItem[] = [
       price: '24,551.14',
       priceTon: '1',
     },
-    badge: 'Hot'
+    badge: 'Basic'
   },
   {
     image: gpu1,
@@ -29,7 +29,7 @@ const mock: CardItem[] = [
       price: '24,551.14',
       priceTon: '1',
     },
-    badge: 'Hot'
+    badge: 'Rare'
   },
   {
     image: gpu1,
@@ -39,7 +39,17 @@ const mock: CardItem[] = [
       price: '24,551.14',
       priceTon: '1',
     },
-    badge: 'Hot'
+    badge: 'Super rare'
+  },
+  {
+    image: gpu1,
+    title: 'AMD Saphire',
+    subtitle: 'Power: 0.09 GH/s',
+    button: {
+      price: '24,551.14',
+      priceTon: '1',
+    },
+    badge: 'Diamonds'
   },
 ];
 export default function MoreComponent () {

@@ -4,6 +4,7 @@ import Fan from '@images/fan.png'
 import avatar1 from '@images/avatar1.png'
 import avatar2 from '@images/avatar2.png'
 import { IoIosArrowForward } from "react-icons/io";
+import Link from "next/link";
 export default function Main() {
   return (
     <div
@@ -33,10 +34,10 @@ export default function Main() {
                         <span className="text-2xl font-bold">0.0000 GPU</span>
                         <span className="opacity-40 text-m">0.00 Gh/s</span>
                     </div>
-                    <div className="flex flex-nowrap p-4 bg-primary gap-2 rounded-[13px]">
+                    <Link href="/buy" className="flex flex-nowrap p-4 bg-primary gap-2 rounded-[13px]">
                         <Image src={Fan} alt="fan" draggable={false} className="m-auto"/>
                         <span className="text-m text-secondary font-bold m-auto">Buy GPUs <br/> to mine</span>
-                    </div>
+                    </Link>
                 </div>
             </div>
             <div className="p-4">
