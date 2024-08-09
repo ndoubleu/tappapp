@@ -1,5 +1,4 @@
 self.onmessage = function (event) {
-    console.log('event', event)
     const resources = event.data.resources;
     let loadedResources = 0;
   

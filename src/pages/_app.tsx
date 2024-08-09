@@ -23,11 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     const loadWorker = async () => {
       const worker = new Worker('/static-loader-worker.js');
-      const resources = [
-        images.forEach((image)=>{
-          return image.src
-        })
-      ];
+      const resources = images.map((image) => image.src);
 
       worker.postMessage({ resources });
 
