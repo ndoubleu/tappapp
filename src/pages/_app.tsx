@@ -11,8 +11,10 @@ import GPU from '@images/gpu.png';
 import Fan from '@images/fan.png';
 import avatar1 from '@images/avatar1.png';
 import avatar2 from '@images/avatar2.png';
+import Cup from '@images/cup.png';
+import Squads from '@images/squads.png';
 
-const images = [tCurrency.src, Tap.src, GPU.src, Fan.src, avatar1.src, avatar2.src];
+const images = [tCurrency, Tap, GPU, Fan, avatar1, avatar2, Squads, Cup];
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(false);
@@ -22,7 +24,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     const loadWorker = async () => {
       const worker = new Worker('/static-loader-worker.js');
       const resources = [
-        ...images
+        images.forEach((image)=>{
+          return image.src
+        })
       ];
 
       worker.postMessage({ resources });
