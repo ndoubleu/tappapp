@@ -1,4 +1,4 @@
-import { useState, ReactNode } from 'react';
+import { useState, useEffect, ReactNode } from 'react';
 
 interface ClickEffectProps {
   children: ReactNode;
@@ -10,41 +10,53 @@ interface ClickEffectProps {
 
 const ClickEffect = ({ children, count, setCount, remain, setRemain }: ClickEffectProps) => {
   const [clicks, setClicks] = useState<{ x: number, y: number, id: number }[]>([]);
-  const [clickHandled, setClickHandled] = useState(false);
+  
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      e.preventDefault();
+      const target = e.currentTarget as HTMLDivElement;
+      handleEffect(e.clientX, e.clientY, target);
+    };
 
-  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (clickHandled) return;
+    const handleTouchStart = (e: TouchEvent) => {
+      e.preventDefault();
+      const touch = e.touches[0];
+      const target = e.currentTarget as HTMLDivElement;
+      handleEffect(touch.clientX, touch.clientY, target);
+    };
 
-    setClickHandled(true);
-    handleEffect(e.clientX, e.clientY, e.currentTarget);
-    setTimeout(() => setClickHandled(false), 100);
-  };
+    const element = document.querySelector('.click-effect') as HTMLDivElement;
+    if (element) {
+      element.addEventListener('click', handleClick, { passive: false });
+      element.addEventListener('touchstart', handleTouchStart, { passive: false });
+    }
 
-  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-    const touch = e.touches[0];
-    handleEffect(touch.clientX, touch.clientY, e.currentTarget);
-  };
+    return () => {
+      if (element) {
+        element.removeEventListener('click', handleClick);
+        element.removeEventListener('touchstart', handleTouchStart);
+      }
+    };
+  }, [count, remain, setCount, setRemain]);
 
   const handleEffect = (clientX: number, clientY: number, target: HTMLDivElement) => {
     const rect = target.getBoundingClientRect();
 
-    if(remain>0){
+    if (remain > 0) {
       setCount(count + 1);
       setRemain(remain - 1);
       const newClick = { x: clientX - rect.left, y: clientY - rect.top, id: Date.now() + Math.random() };
       setClicks((prevClicks) => [...prevClicks, newClick]);
 
-    setTimeout(() => {
-      setClicks((prevClicks) => prevClicks.filter((click) => click.id !== newClick.id));
-    }, 1000);
+      setTimeout(() => {
+        setClicks((prevClicks) => prevClicks.filter((click) => click.id !== newClick.id));
+      }, 1000);
     }
   };
 
   return (
     <div
-      className="relative inline-block"
-      onMouseDown={handleClick}
-      onTouchStart={handleTouchStart}
+      className="relative inline-block click-effect"
     >
       {children}
       {clicks.map((click) => (

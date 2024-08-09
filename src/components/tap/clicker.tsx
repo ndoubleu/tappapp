@@ -39,11 +39,11 @@ export default function ClickerComponent({count, setCount, setDrawerOpen, remain
     <div className='relative w-full h-full flex flex-col justify-between'>
       <div className='absolute inset-0 m-auto flex flex-col justify-center items-center'>
         <div className='relative'>
-          <Tilt options={defaultOptions}>
+          {/* <Tilt options={defaultOptions}> */}
             <ClickEffect remain={remain} setRemain={setRemain} count={count} setCount={setCount}>
               <Image src={Tap} alt="Tap" className={`cursor-pointer z-1 transform transition-transform duration-150 ease-out scale-100 ${remain > 0 && 'active:scale-98'}`} draggable={false}/>
            </ClickEffect>
-          </Tilt>
+          {/* </Tilt> */}
         </div>
       </div>
       <div className='flex flex-nowrap justify-center items-center text-4xl font-bold z-2 relative'>
