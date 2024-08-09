@@ -40,6 +40,10 @@ const config: Config = {
       scale: {
         '98' : '0.98', 
       },
+      backgroundImage: {
+        'green-gradient': 'linear-gradient(180deg, #1E3C3A 0%, #1A2824 49.5%, #1E3C3A 79.5%, #21716B 100%)',
+        'red-gradient': 'linear-gradient(180deg, #3C1E1E 0%, #281A1A 49.5%, #532626 79.5%, #953333 100%)',
+      },
     },
   },
   plugins: [],
